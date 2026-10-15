@@ -1,0 +1,313 @@
+/* ==========================================================
+   style.css · Diseño Web · 
+   Especificidad: #id (alta) > .clase (media) > etiqueta (baja)
+   ========================================================== */
+
+/* ---------- Base (selectores de etiqueta) ---------- */
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.6;
+    color: #1f2937;
+    background-color: #f3f6fb;
+}
+
+img { max-width: 100%; height: auto; }
+
+h2 {
+    color: #14337a;
+    border-bottom: 3px solid #19a7e0;
+    padding-bottom: 0.3rem;
+}
+
+/* ---------- Cabecera y menú ---------- */
+#cabecera {
+    padding: 2rem 1rem 0;
+    text-align: center;
+    color: #ffffff;
+    background: linear-gradient(135deg, #0a1f4d, #14337a);
+}
+
+#cabecera h1 {
+    margin: 0 0 0.5rem;
+    animation: aparecer 1s ease both;
+}
+
+#menu ul {
+    margin: 1.5rem 0 0;
+    padding: 0;
+    list-style: none;
+    overflow: hidden; /* contiene los li flotantes */
+}
+
+#menu li { float: left; width: 25%; }
+
+#menu a {
+    display: block;
+    padding: 0.9rem 0.5rem;
+    color: #ffffff;
+    text-decoration: none;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+#menu a:hover { background-color: #19a7e0; color: #0a1f4d; }
+
+/* ---------- Botón con transition + transform (selector .clase) ---------- */
+.boton {
+    display: inline-block;
+    padding: 0.7rem 1.6rem;
+    color: #0a1f4d;
+    font-weight: bold;
+    text-decoration: none;
+    background-color: #19a7e0;
+    border-radius: 2rem;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.boton:hover { transform: scale(1.1); background-color: #ffffff; }
+
+/* ---------- Maquetación con cajas flotantes (div + float + clear) ---------- */
+#principal { padding: 1rem; }
+
+.seccion { margin-bottom: 2rem; }
+
+.caja { float: left; }
+
+.caja-foto  { width: 28%; margin-right: 4%; }
+.caja-texto { width: 68%; }
+
+.tarjeta {
+    width: 32%;
+    margin-right: 2%;
+    padding: 1rem;
+    background-color: #ffffff;
+    border-radius: 0.75rem;
+    box-shadow: 0 2px 8px rgba(10, 31, 77, 0.15);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.tarjeta:last-of-type { margin-right: 0; }
+
+.tarjeta:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 14px 28px rgba(10, 31, 77, 0.25);
+}
+
+.caja-audio { width: 46%; margin-right: 4%; }
+.caja-video { width: 50%; }
+
+
+
+/* ---------- Video de YouTube (iframe) con proporción 16:9 ---------- */
+.video-responsivo { position: relative; padding-bottom: 56.25%; height: 0; }
+
+.video-responsivo iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+audio { width: 100%; }
+
+/* ---------- Animaciones ---------- */
+@keyframes aparecer {
+    from { opacity: 0; transform: translateY(-20px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+.tarjeta img { transition: transform 0.4s ease; }
+.tarjeta:hover img { transform: scale(1.08); }
+
+/* ---------- Diseño responsivo  ---------- */
+/* Móvil: menos de 768px → todo en una columna */
+@media (max-width: 767px) {
+    #menu li { float: none; width: 100%; }
+
+    .caja-foto, .caja-texto, .tarjeta, .caja-audio, .caja-video {
+        float: none;
+        width: 100%;
+        margin-right: 0;
+        margin-bottom: 1rem;
+    }
+
+    .caja-foto { max-width: 200px; margin-left: auto; margin-right: auto; }
+
+    #cabecera h1 { font-size: 1.6rem; }
+}
+
+/* Escritorio: 768px o más → contenido centrado y letra mayor */
+@media (min-width: 768px) {
+    #principal { max-width: 1000px; margin: 0 auto; padding: 2rem 1rem; }
+
+    #cabecera h1 { font-size: 2.5rem; }
+
+    #menu ul { max-width: 1000px; margin-left: auto; margin-right: auto; }
+}
+
+
+
+
+/* ---------- Formulario: borde activo (:focus) en azul corporativo ---------- */
+.formulario-contacto .form-control:focus,
+.formulario-contacto .form-select:focus {
+    border-color: #14337a;
+    box-shadow: 0 0 0 0.25rem rgba(20, 51, 122, 0.25);
+}
+
+/* ---------- Pie de página ---------- */
+.pie-pagina {
+    padding: 2rem 0;
+}
+
+.enlace-social {
+    font-size: 1.5rem;
+    color: #ffffff;
+    transition: color 0.3s;
+}
+
+.enlace-social:hover {
+    color: #19a7e0;
+}
+
+.lista-autores {
+    display: inline-block;
+    margin: 0;
+    text-align: left;
+    list-style-type: "- ";
+}
+
+
+/* Contacto */
+.contact-section {
+    background-color: #fff;
+    padding: 50px 0;
+}
+
+.contact-title {
+    text-align: center;
+    color: #0b255a;
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 30px;
+}
+
+.contact-form {
+    max-width: 650px;
+    margin: 0 auto;
+}
+
+.form-row {
+    display: flex;
+    gap: 20px;
+}
+
+.form-group {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    font-size: 14px;
+    color: #333;
+    margin-bottom: 6px;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #d1d5db;
+    border-radius: 6px;
+    font-size: 14px;
+    outline: none;
+    background-color: #fff;
+}
+
+.btn-submit {
+    background-color: #0f2b66;
+    color: #fff;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 6px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.btn-submit:hover {
+    background-color: #1a3a8a;
+}
+
+/* Footer */
+.main-footer {
+    background-color: #092052;
+    color: #ffffff;
+    padding: 40px 20px;
+    font-size: 14px;
+}
+
+.footer-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer-left h3 {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 4px;
+}
+
+.footer-left p {
+    margin-bottom: 2px;
+}
+
+.footer-left .dev-by {
+    margin-top: 6px;
+}
+
+.footer-left ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.footer-center {
+    text-align: center;
+}
+
+.footer-right .social-icons {
+    display: flex;
+    gap: 12px;
+}
+
+.footer-right .social-icons a {
+    color: #fff;
+    font-size: 18px;
+    text-decoration: none;
+}
+
+@media (max-width: 768px) {
+    .form-row {
+        flex-direction: column;
+        gap: 0;
+    }
+
+    .footer-container {
+        flex-direction: column;
+        text-align: center;
+        gap: 25px;
+    }
+}

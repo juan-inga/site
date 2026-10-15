@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Diseño Web | Ingeniería de Sistemas e Informática</title>
+    <meta name="description" content="Portafolio académico de Diseño Web con HTML5, CSS3, multimedia, animaciones y diseño responsivo, publicado en GitHub Pages.">
+    <meta name="keywords" content="diseño web, portafolio, HTML5, CSS3, responsive, GitHub Pages, ingeniería de sistemas">
+    <meta name="author" content="inga quintana juan carlos">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- Cabecera y menú de navegación -->
+    <header id="cabecera">
+        <h1> Diseño Web</h1>
+        <p>INGA QUINTANA JUAN CARLOS · Estudiante de Ingeniería de Sistemas e Informática</p>
+        <a class="boton" href="#proyectos">Ver proyectos</a>
+        <nav id="menu">
+            <ul>
+                <li><a href="#sobre-mi">Sobre mí</a></li>
+                <li><a href="#proyectos">Proyectos</a></li>
+                <li><a href="#multimedia">Multimedia</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main id="principal">
+
+        <!-- Maquetación con cajas flotantes: foto a la izquierda, texto a la derecha -->
+        <section id="sobre-mi" class="seccion limpiar">
+            <h2>Sobre mí</h2>
+            <div class="caja caja-foto">
+                <img src="img/perfil.svg" alt="Foto de perfil del estudiante" width="200" height="200">
+            </div>
+            <div class="caja caja-texto">
+                <p>Soy estudiante del curso de Diseño Web. Aquí presento mis prácticas con <strong>HTML5</strong>, <strong>CSS3</strong>, recursos multimedia y diseño responsivo.</p>
+                <p>El sitio usa etiquetas semánticas, cajas flotantes con <code>float</code> y <code>clear</code>, transiciones y animaciones CSS.</p>
+            </div>
+        </section>
+
+        <!-- Tres tarjetas flotantes en fila -->
+        <section id="proyectos" class="seccion limpiar">
+            <h2>Proyectos</h2>
+            <div class="caja tarjeta">
+                <img src="img/proyecto-1.svg" alt="Esquema de wireframe de una página de inicio">
+                <h3>Wireframe</h3>
+                <p>Boceto de la estructura de un homepage: header, nav, sección principal y footer.</p>
+            </div>
+            <div class="caja tarjeta">
+                <img src="img/proyecto-2.svg" alt="Esquema del mapa de un sitio web">
+                <h3>Sitemap</h3>
+                <p>Mapa del sitio con jerarquía de la información y navegación.</p>
+            </div>
+            <div class="caja tarjeta">
+                <img src="img/proyecto-3.svg" alt="Esquema de una página responsiva con Bootstrap">
+                <h3>Portal responsivo</h3>
+                <p>Página adaptable a móvil, tablet y escritorio.</p>
+            </div>
+        </section>
+
+        <!-- Recursos multimedia: audio local e iframe de YouTube -->
+        <section id="multimedia" class="seccion limpiar">
+            <h2>Multimedia</h2>
+            <div class="caja caja-audio">
+                <h3>Audio local</h3>
+                <audio controls preload="metadata">
+                    <source src="audio/melodia.wav" type="audio/wav">
+                    Tu navegador no admite el elemento audio.
+                </audio>
+            </div>
+            <div class="caja caja-video">
+                <h3>Video de YouTube</h3>
+                <div class="video-responsivo">
+                    <iframe src="https://www.youtube.com/embed/aaEeEpOC-EQ" title="Video de YouTube incrustado"
+                            loading="lazy" allowfullscreen></iframe>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECCIÓN CONTACTO -->
+        <section id="contacto" class="contact-section">
+            <div class="container">
+                <h2 class="contact-title">Contacto</h2>
+                <form class="contact-form" action="#" method="POST">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="nombre">Nombre completo</label>
+                            <input type="text" id="nombre" name="nombre" placeholder="Nombres y apellidos" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="correo">Correo institucional</label>
+                            <input type="email" id="correo" name="correo" placeholder="usuario@uch.edu.pe" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="consulta">Tipo de consulta</label>
+                        <select id="consulta" name="consulta">
+                            <option value="" disabled selected>Selecciona una opción</option>
+                            <option value="wireframe">Wireframe</option>
+                            <option value="soporte">Soporte Técnico</option>
+                            <option value="otro">Otro</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="mensaje">Mensaje</label>
+                        <textarea id="mensaje" name="mensaje" rows="5" placeholder="Escribe tu mensaje" required></textarea>
+                    </div>
+
+                    <button type="submit" class="btn-submit">Enviar mensaje</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="main-footer">
+        <div class="footer-container">
+            <div class="footer-col footer-left">
+                <h3>ConsultaSoft</h3>
+                <p>Diseño Web</p>
+                <p class="dev-by">Desarrollado por: INGA QUINTANA JUAN CARLOS</p>
+                            
+                </div>
+            
+            <div class="footer-col footer-center">
+                <p>Ingeniería de Sistemas e Informática</p>
+                <p>Universidad de Ciencias y Humanidades (UCH)</p>
+            </div>
+            
+            <div class="footer-col footer-right">
+            
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
